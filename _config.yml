@@ -1,10 +1,7 @@
 theme: jekyll-theme-midnight
-
 plugins:
   - jekyll-paginate
-
 paginate: 5
 paginate_path: "/page:num/"
-
 title: milo's homepage
 description: Welcome to World of MIS!
