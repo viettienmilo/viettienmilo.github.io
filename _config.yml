@@ -1,7 +1,6 @@
-# theme: jekyll-theme-midnight
-remote_theme: pages-themes/midnight@v0.2.0
+theme: jekyll-theme-slate
+
 plugins:
-  - jekyll-remote-theme
   - jekyll-paginate
 
 paginate: 5
