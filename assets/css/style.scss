@@ -59,3 +59,20 @@ section {
 #header {
   display: none !important;
 }
+
+/* Category titles */
+.category-title {
+    color: #3498db;   /* blue */
+    font-weight: bold;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 4px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Subcategory titles */
+.subcategory-title {
+    color: #e67e22;   /* orange */
+    font-style: italic;
+    margin-left: 10px;
+}
