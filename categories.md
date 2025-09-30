@@ -6,15 +6,23 @@ permalink: /categories/
 
 ## Browse by Category
 
-{% for category in site.categories %}
+{% assign grouped = site.posts | group_by: "category" %}
+{% for subject in grouped %}
 
-## {{ category[0] }}
+### {{ subject.name }}
 
-{% for post in category[1] %}
+  {% assign subgroups = subject.items | group_by: "subcategory" %}
+  {% for chapter in subgroups %}
 
-- [{{ post.title }}]({{ post.url | relative_url }})  
-  _{{ post.date | date: "%B %d, %Y" }}_
+#### {{ chapter.name }}
 
-{% endfor %}
+  {% for post in chapter.items %}
+
+- [{{ post.title }}]({{ post.url | relative_url }})
+    _{{ post.date | date: "%B %d, %Y" }}_
+
+  {% endfor %}
+
+  {% endfor %}
 
 {% endfor %}
