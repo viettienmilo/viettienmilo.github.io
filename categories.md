@@ -10,12 +10,12 @@ permalink: /categories/
 {% assign grouped = site.posts | group_by: "category" %}
 {% for subject in grouped %}
 
-## {{ subject.name }}
+## <span class="category-title">{{ subject.name }}</span>
 
   {% assign subgroups = subject.items | group_by: "subcategory" %}
   {% for chapter in subgroups %}
 
-### {{ chapter.name }}
+### <span class="subcategory-title">{{ chapter.name }}</span>
 
   {% for post in chapter.items %}
 
