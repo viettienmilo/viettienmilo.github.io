@@ -3,17 +3,17 @@
 
 @import "{{ site.theme }}";
 
-/* ensure full height so footer can be anchored */
+/* basic reset for layout anchoring */
 html, body {
   height: 100%;
+  margin: 0;
 }
 
-/* body is already flex in your default.html; keep these to be safe */
-body {
+/* page container is the flex root */
+#page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin: 0;
 }
 
 /* expand room for contents - copy from midnight theme */
@@ -22,7 +22,8 @@ section {
   padding: 30px 0px 50px 0px;
   margin: 20px 0;
   margin-top: 40px;
-
+  box-sizing: border-box;
+  
   #title {
     border: 0;
     outline: none;
@@ -69,13 +70,24 @@ section {
   width: 95%;
   margin: 0 auto;
   flex: 1 0 auto; // stretch content to bottom of page
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+  margin-bottom: 0;
+  box-sizing: border-box;
 }
 
-/* Hide the "View on GitHub" button */
+/* header nav tweaks (avoid default ul margins) */
+#header nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* ensure header doesn't add unexpected height */
 #header {
-  display: none !important;
+  box-sizing: border-box;
+  padding: 8px 16px;
 }
 
 /* Category titles */
@@ -142,17 +154,53 @@ nav a.active {
     margin-bottom: 10px;
 }
 
-/* footer styling: don't let it shrink */
+/* footer styling and centering */
 #site-footer {
-  max-width: 1200px;
-  width: 95%;
   flex-shrink: 0;
-  /* visual style */
   border-top: 1px solid #444;
-  padding-top: 12px;
-  margin: 12px auto 0;   /* auto left & right → center horizontally */
+  margin: 0;               /* no extra bottom margin */
+  padding: 12px 0;
   color: #9aa0a6;
   text-align: center;
   font-size: 0.85em;
 }
 
+/* center the inner footer content and limit width */
+#site-footer .footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+/* credits layout */
+#site-footer .credits {
+  display: inline-block;
+  margin: 6px 0;
+}
+
+/* on small screens, stack credits */
+@media (max-width: 640px) {
+  #site-footer .footer-inner {
+    justify-content: center;
+    text-align: center;
+  }
+  #site-footer .credits.left,
+  #site-footer .credits.right {
+    width: 100%;
+  }
+}
+
+/* remove extra margins on hr/title that can create small overflow */
+#title hr {
+  margin: 0;
+}
+
+/* small safeguard: ensure no element forces body beyond viewport slightly */
+* {
+  box-sizing: border-box;
+}
