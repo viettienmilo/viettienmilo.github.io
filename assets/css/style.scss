@@ -91,27 +91,28 @@ nav {
 /* Base nav button */
 nav a {
     display: inline-block;
-    background-color: #2c3e50;   /* dark gray */
-    color: #F44336 !important;   /* bright red-orange */
+    background-color: #2c3e50;   /* dark gray (midnight bg) */
+    color: #F48FB1 !important;   /* soft pink */
     padding: 8px 16px;
     margin: 0 4px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    border: 1px solid #F44336;
+    border: 2px solid #F48FB1;
     transition: all 0.3s ease;
 }
 
 /* Hover effect */
 nav a:hover {
-    background-color: #F44336;   /* red-orange background */
-    color: #fff !important;
+    background-color: #F48FB1;   /* pink bg */
+    color: #2c3e50 !important;   /* dark text for contrast */
 }
 
 /* Active button */
 nav a.active {
-    background-color: #D32F2F;   /* darker red */
-    border-color: #D32F2F;
+    background-color: #EC407A;   /* deeper pink (Material Pink 400) */
+    border-color: #EC407A;
     color: #fff !important;
 }
+
 
