@@ -3,13 +3,25 @@ layout: default
 ---
 
 <!-- ✅ Navigation bar -->
-<nav style="text-align:center; margin: 0 0 20px 0;">
+<!-- <nav style="text-align:center; margin: 0 0 20px 0;">
     <a href="{{'/' | relative_url }}">Home</a> |
     <a href="{{ '/categories/' | relative_url }}">Categories</a> |
     <a href="{{ '/archive/' | relative_url }}">Archive</a> |
     <a href="{{'/about/' | relative_url }}">About</a> |
     <a href="{{'/contact/' | relative_url }}">Contact</a>
+</nav> -->
+<nav style="text-align:center; margin:20px 0;">
+    <a href="{{'/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a>
+    <a href="{{'/categories/' | relative_url }}"
+        class="{% if page.url contains '/categories/' %}active{% endif %}">Categories</a>
+    <a href="{{'/archives/' | relative_url }}"
+        class="{% if page.url contains '/archives/' %}active{% endif %}">Archives</a>
+    <a href="{{'/about/' | relative_url }}" class="{% if page.url contains '/about/' %}active{% endif %}">About</a>
+    <a href="{{'/contact/' | relative_url }}"
+        class="{% if page.url contains '/contact/' %}active{% endif %}">Contact</a>
+
 </nav>
+
 
 <div style="display:flex; gap:20px;">
 

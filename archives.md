@@ -1,7 +1,7 @@
 ---
 layout: custom
 title: Archive
-permalink: /archive/
+permalink: /archives/
 ---
 
 ## All Posts
