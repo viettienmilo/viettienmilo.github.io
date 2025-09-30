@@ -3,6 +3,19 @@
 
 @import "{{ site.theme }}";
 
+/* ensure full height so footer can be anchored */
+html, body {
+  height: 100%;
+}
+
+/* body is already flex in your default.html; keep these to be safe */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
 /* expand room for contents - copy from midnight theme */
 section {
   max-width: 1200px;
@@ -129,6 +142,7 @@ nav a.active {
 
 /* footer styling: don't let it shrink */
 #site-footer {
+  max-width: 1200px;
   flex-shrink: 0;
   /* visual style */
   border-top: 1px solid #444;
