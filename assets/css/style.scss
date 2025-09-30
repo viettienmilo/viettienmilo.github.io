@@ -145,6 +145,7 @@ nav a.active {
 /* footer styling: don't let it shrink */
 #site-footer {
   max-width: 1200px;
+  width: 95%;
   flex-shrink: 0;
   /* visual style */
   border-top: 1px solid #444;
