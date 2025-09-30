@@ -1,6 +1,7 @@
 ---
 layout: custom
 title: Categories
+permalink: /categories/
 ---
 
 ## Browse by Category
