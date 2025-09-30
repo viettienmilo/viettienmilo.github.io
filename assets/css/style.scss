@@ -1,7 +1,4 @@
---- 
---- 
-
-@import "{{ site.theme }}";
+--- --- @import "{{ site.theme }}";
 
 section {
   max-width: 1200px;
@@ -53,4 +50,9 @@ section {
   max-width: 1200px;
   width: 95%;
   margin: 0 auto;
+}
+
+/* Hide the "View on GitHub" button */
+.repo {
+  display: none !important;
 }
