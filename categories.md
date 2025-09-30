@@ -8,10 +8,7 @@ permalink: /categories/
 {% assign grouped = site.posts | group_by: "category" %}
 {% for subject in grouped %}
 
-## <a class="category-title" href="{{ '/categories/' | append: subject.name | downcase | relative_url }}">
-
-   {{ subject.name }}
-</a>
+## <a class="category-title" href="{{ '/categories/' | append: subject.name | downcase | relative_url }}">{{ subject.name }}</a>
 
   {% assign subgroups = subject.items | group_by: "subcategory" %}
   {% for chapter in subgroups %}
