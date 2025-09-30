@@ -1,27 +1,14 @@
 ---
 layout: custom
-title: Categories
-permalink: /categories/
+title: MIS
+permalink: /categories/mis/
 ---
 
+## Posts in MIS
 
-{% assign grouped = site.posts | group_by: "category" %}
-{% for subject in grouped %}
-
-## <span class="category-title">{{ subject.name }}</span>
-
-  {% assign subgroups = subject.items | group_by: "subcategory" %}
-  {% for chapter in subgroups %}
-
-### <span class="subcategory-title">{{ chapter.name }}</span>
-
-  {% for post in chapter.items %}
+{% assign posts_in_cat = site.posts | where: "category", "MIS" %}
+{% for post in posts_in_cat %}
 
 - [{{ post.title }}]({{ post.url | relative_url }})
-    _{{ post.date | date: "%B %d, %Y" }}_
-
-  {% endfor %}
-
-  {% endfor %}
-
+  _{{ post.date | date: "%B %d, %Y" }}_
 {% endfor %}
