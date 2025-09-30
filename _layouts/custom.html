@@ -16,26 +16,26 @@ layout: default
 </nav>
 
 
-<div style="display:flex; gap:20px;">
+<div style="display:flex; gap:20px; flex:1;"">
 
     <!-- ✅ Main content -->
-    <main style="flex:3;">
-        {{ content }}
+    <main style=" flex:3;">
+    {{ content }}
 
-        <!-- ✅ Pagination -->
-        {% if paginator %}
-        <div style="margin-top:30px; text-align:center;">
-            {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path }}">Previous</a>
-            {% endif %}
-
-            <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-
-            {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path }}">Next</a>
-            {% endif %}
-        </div>
+    <!-- ✅ Pagination -->
+    {% if paginator %}
+    <div style="margin-top:30px; text-align:center;">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}">Previous</a>
         {% endif %}
+
+        <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}">Next</a>
+        {% endif %}
+    </div>
+    {% endif %}
     </main>
 
     <!-- ✅ Sidebar -->
