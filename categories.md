@@ -4,17 +4,18 @@ title: Categories
 permalink: /categories/
 ---
 
-## Browse by Category
+
+## Browse by Subject
 
 {% assign grouped = site.posts | group_by: "category" %}
 {% for subject in grouped %}
 
-### {{ subject.name }}
+## {{ subject.name }}
 
   {% assign subgroups = subject.items | group_by: "subcategory" %}
   {% for chapter in subgroups %}
 
-#### {{ chapter.name }}
+### {{ chapter.name }}
 
   {% for post in chapter.items %}
 
