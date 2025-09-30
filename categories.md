@@ -5,8 +5,6 @@ permalink: /categories/
 ---
 
 
-## Browse by Subject
-
 {% assign grouped = site.posts | group_by: "category" %}
 {% for subject in grouped %}
 
